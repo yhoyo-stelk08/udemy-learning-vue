@@ -1,9 +1,12 @@
-<template></template>
+<template>
+<SignUpForm></SignUpForm>
+</template>
 
 <script>
+import SignUpForm from "@/components/SignUpForm.vue"
   export default {
     name: "App",
-    components: {},
+    components: { SignUpForm },
   };
 </script>
 
@@ -15,5 +18,10 @@
     text-align: center;
     color: #9aadc0;
     margin-top: 60px;
+  }
+
+  .body {
+    margin: 0;
+    background: #eee;
   }
 </style>
