@@ -3,7 +3,14 @@ import Block from "@/components/Block.vue";
 
 describe("Block.vue", () => {
   it("render div with Click Me text", () => {
-    const wrapper = mount(Block);
+    const wrapper = mount(Block, {
+      data() {
+        return {
+          showBlock: true,
+        };
+      },
+    });
+
     expect(wrapper.get("div").text()).toMatch("Click Me");
   });
 
