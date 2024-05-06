@@ -1,43 +1,21 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Vue 3</title>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3.0.2/dist/vue.global.js"></script>
+    <title>First Chapter VUE</title>
 </head>
-<style>
-    .box {
-        background: #ddd;
-        display: inline-block;
-        margin: 20px;
-        padding: 400px;
-        text-align: center;
-        width: 100px 0;
-    }
-</style>
-
 <body>
-    <h1>Hello Vue :)</h1>
+    <h1>Hello Vue</h1>
     <div id="app">
+        <h2>
+            {{ count }}
+        </h2>
 
-        <div v-if="visible">
-            <ul v-for="( person, index ) in persons">
-                <li @click="toggleFav(person.isFav, index)">
-                    <p>My name is {{ person.name }}, and i live in {{ person.city }}, my age right now is {{ person.age
-                        }}, favourite value: {{ person.isFav }}</p>
-                </li>
-            </ul>
-        </div>
-        <button @click="toggleVisibility">
-            <span v-if="visible">Hide Bio</span>
-            <span v-else>Show Bio</span>
-        </button>
-
+        <button v-on:click="count++">Increase count</button>
+        <button v-on:click="count--">Decrease count</button>
     </div>
-
     <script src="app.js"></script>
 </body>
-
 </html>
