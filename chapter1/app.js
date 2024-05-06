@@ -5,6 +5,11 @@ const app = Vue.createApp({
       count: 0,
     }
    },
+   methods: {
+    changeTitle() {
+      this.title = 'title changed'
+    }
+   },
 })
 
 app.mount('#app')
