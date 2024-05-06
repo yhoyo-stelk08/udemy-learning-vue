@@ -1,17 +1,32 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      title: 'Modal Project With Vue + Vite + Tailwind',
+    };
+  },
+  methods: {
+    handleClick() {
+      console.log(this.$refs.name);
+    },
+  },
+};
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <h1
+    class="text-red-500 border-b border-solid border-stone-300 pb-2 mb-3 inline-block"
+  >
+    {{ title }}
+  </h1>
+  <input type="text" ref="name" class="space-y-3 my-3" />
+  <button
+    @click="handleClick"
+    class="p-2 my-2 mx-3 bg-slate-500 hover:bg-slate-700 border-none"
+  >
+    Click Me
+  </button>
 </template>
 
 <style scoped>
