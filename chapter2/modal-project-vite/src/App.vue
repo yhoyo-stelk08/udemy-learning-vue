@@ -1,4 +1,6 @@
 <script>
+import Modal from './components/Modal.vue'
+
 export default {
   name: 'App',
   data() {
@@ -11,6 +13,9 @@ export default {
       console.log(this.$refs.name);
     },
   },
+  components: {
+    Modal
+  }
 };
 </script>
 
@@ -20,13 +25,9 @@ export default {
   >
     {{ title }}
   </h1>
-  <input type="text" ref="name" class="space-y-3 my-3" />
-  <button
-    @click="handleClick"
-    class="p-2 my-2 mx-3 bg-slate-500 hover:bg-slate-700 border-none"
-  >
-    Click Me
-  </button>
+
+  <Modal header='Sign up for the Giveaway!'/>
+  
 </template>
 
 <style scoped>
