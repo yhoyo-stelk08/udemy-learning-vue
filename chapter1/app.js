@@ -6,6 +6,11 @@ const app = Vue.createApp({
       isShow: true,
       x: 0,
       y: 0,
+      books : [
+        {title: 'Title 1', author: 'Author 1'},
+        {title: 'Title 2', author: 'Author 2'},
+        {title: 'Title 3', author: 'Author 3'},
+      ]
     }
    },
    methods: {
