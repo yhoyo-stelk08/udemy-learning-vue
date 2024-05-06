@@ -54,6 +54,11 @@
             title: {{ book.title }} - author: {{ book.author }}
         </li>
       </ul>
+      <br>
+      <h2>Learn about attribute binding</h2>
+      <a v-bind:href="url">go to google 1</a>
+      <br>
+      <a :href="url">go to google 2</a>
     </div>
     <script src="app.js"></script>
   </body>

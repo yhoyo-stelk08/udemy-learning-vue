@@ -10,7 +10,8 @@ const app = Vue.createApp({
         {title: 'Title 1', author: 'Author 1'},
         {title: 'Title 2', author: 'Author 2'},
         {title: 'Title 3', author: 'Author 3'},
-      ]
+      ],
+      url: 'https://www.google.com',
     }
    },
    methods: {
