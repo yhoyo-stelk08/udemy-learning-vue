@@ -63,11 +63,12 @@
       <br>
       <a :href="url">go to google 2</a>
       <ul>
-        <li v-for="(book, index) in books" :key="index">
+        <li v-for="(book, index) in books" :key="index" v-on:click="handleChangeIsFav($event, book)">
             <img :src="book.img" :alt="book.title" style="display: inline-block;">
             <p :class="{fav: book.isFav}">title: {{ book.title }} - author: {{ book.author }}</p>
         </li>
       </ul>
+      <br>
     </div>
     <script src="app.js"></script>
   </body>
