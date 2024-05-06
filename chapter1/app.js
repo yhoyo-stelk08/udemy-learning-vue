@@ -6,8 +6,8 @@ const app = Vue.createApp({
     }
    },
    methods: {
-    changeTitle() {
-      this.title = 'title changed'
+    changeTitle(passedValue) {
+      this.title = passedValue
     }
    },
 })
