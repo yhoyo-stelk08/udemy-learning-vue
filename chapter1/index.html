@@ -6,17 +6,17 @@
     <script src="https://unpkg.com/vue@3.0.2/dist/vue.global.js"></script>
     <title>First Chapter VUE</title>
     <style>
-        .box {
-            padding: 100px 0;
-            width: 400px;
-            text-align: center;
-            background: #ddd;
-            margin: 20px;
-            display: inline-block;
-        }
-        .fav {
-            color: burlywood;
-        }
+      .box {
+        padding: 100px 0;
+        width: 400px;
+        text-align: center;
+        background: #ddd;
+        margin: 20px;
+        display: inline-block;
+      }
+      .fav {
+        color: burlywood;
+      }
     </style>
   </head>
   <body>
@@ -26,49 +26,85 @@
         <h2>Passing dynamic value</h2>
         <h4>{{ title }}</h4>
         <h4>{{ count }}</h4>
-        <br>
+        <br />
         <h2>firing event from html page directly</h2>
         <button @click="count++">Increase count</button>
         <button @click="count--">Decrease count</button>
-        <br>
-        <h2>firing event from html page to app.js and passing some arguments</h2>
+        <br />
+        <h2>
+          firing event from html page to app.js and passing some arguments
+        </h2>
         <button @click="changeTitle('Passed value from html page')">
           Change Title
         </button>
       </div>
-      <br>
+      <br />
       <h2>Conditional rendering with v-show</h2>
       <div v-show="isShow">how to use v-show</div>
-      <h2>Conditional rendering with v-if and v-else, handling mouse click event</h2>
+      <h2>
+        Conditional rendering with v-if and v-else, handling mouse click event
+      </h2>
       <button v-on:click="showContent">
         <span v-if="isShow">Hide</span>
         <span v-else>Show</span>
       </button>
-      <br>
+      <br />
       <h2>Mouse Event</h2>
-      <div v-on:mouseover="handleEvent($event, 5)" class="box">mouseover event</div>
+      <div v-on:mouseover="handleEvent($event, 5)" class="box">
+        mouseover event
+      </div>
       <div v-on:mouseleave="handleEvent" class="box">mouseleave event</div>
       <div v-on:dblclick="handleEvent" class="box">double click event</div>
-      <div  v-on:mousemove="handleMousemove" class="box">mouse position : {{ x }} - {{ y }} </div>
-      <br>
+      <div v-on:mousemove="handleMousemove" class="box">
+        mouse position : {{ x }} - {{ y }}
+      </div>
+      <br />
       <h2>Learn about v-for</h2>
       <ul>
         <li v-for="(book, index) in books" :key="index">
-            title: {{ book.title }} - author: {{ book.author }}
+          title: {{ book.title }} - author: {{ book.author }}
         </li>
       </ul>
-      <br>
+      <br />
       <h2>Learn about attribute binding</h2>
       <a v-bind:href="url">go to google 1</a>
-      <br>
+      <br />
       <a :href="url">go to google 2</a>
       <ul>
-        <li v-for="(book, index) in books" :key="index" v-on:click="handleChangeIsFav($event, book)">
-            <img :src="book.img" :alt="book.title" style="display: inline-block;">
-            <p :class="{fav: book.isFav}">title: {{ book.title }} - author: {{ book.author }}</p>
+        <li
+          v-for="(book, index) in books"
+          :key="index"
+          v-on:click="handleChangeIsFav($event, book)"
+        >
+          <img
+            :src="book.img"
+            :alt="book.title"
+            style="display: inline-block"
+          />
+          <p :class="{fav: book.isFav}">
+            title: {{ book.title }} - author: {{ book.author }}
+          </p>
         </li>
       </ul>
-      <br>
+      <br />
+      <h2>Learn about computed properties</h2>
+      <ul>
+        <li
+          v-for="(book, index) in filteredBooks"
+          :key="index"
+          @click="handleChangeIsFav($event, book)"
+          :class="{fav: book.isFav}"
+        >
+          <img
+            :src="book.img"
+            :alt="book.title"
+            style="display: inline-block"
+          />
+          <p :class="{fav: book.isFav}">
+            title: {{ book.title }} - author: {{ book.author }}
+          </p>
+        </li>
+      </ul>
     </div>
     <script src="app.js"></script>
   </body>
