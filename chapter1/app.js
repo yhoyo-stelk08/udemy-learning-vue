@@ -4,6 +4,8 @@ const app = Vue.createApp({
       title: 'dynamic value',
       count: 0,
       isShow: true,
+      x: 0,
+      y: 0,
     }
    },
    methods: {
@@ -19,6 +21,10 @@ const app = Vue.createApp({
       if (data) {
         console.log(data)
       }
+    },
+    handleMousemove(e) {
+      this.x = e.offsetX
+      this.y = e.offsetY
     },
    },
 })

@@ -39,7 +39,7 @@
       <div v-on:mouseover="handleEvent($event, 5)" class="box">mouseover event</div>
       <div v-on:mouseleave="handleEvent" class="box">mouseleave event</div>
       <div v-on:dblclick="handleEvent" class="box">double click event</div>
-      <div class="box"></div>
+      <div  v-on:mousemove="handleMousemove" class="box">mouse position : {{ x }} - {{ y }} </div>
     </div>
     <script src="app.js"></script>
   </body>
