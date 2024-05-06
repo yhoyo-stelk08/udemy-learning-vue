@@ -9,12 +9,20 @@
   <body>
     <h1>Hello Vue</h1>
     <div id="app">
-      <h2>{{title}}</h2>
-      <h2>{{ count }}</h2>
+      <div v-if="isShow">
+        <h2>{{title}}</h2>
+        <h2>{{ count }}</h2>
 
-      <button @click="count++">Increase count</button>
-      <button @click="count--">Decrease count</button>
-      <button @click="changeTitle('Passed value from html page')">Change Title</button>
+        <button @click="count++">Increase count</button>
+        <button @click="count--">Decrease count</button>
+        <button @click="changeTitle('Passed value from html page')">
+          Change Title
+        </button>
+      </div>
+      <button v-on:click="showContent">
+        <span v-if="isShow">Hide</span>
+        <span v-else>Show</span>
+      </button>
     </div>
     <script src="app.js"></script>
   </body>
