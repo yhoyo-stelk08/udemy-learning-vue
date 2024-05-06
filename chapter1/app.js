@@ -12,7 +12,11 @@ const app = Vue.createApp({
     },
     showContent() {
       this.isShow = !this.isShow
-    }
+    },
+    handleEvent(e){
+      const { type } = e
+      console.log('event type: ', type)
+    },
    },
 })
 

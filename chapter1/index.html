@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/vue@3.0.2/dist/vue.global.js"></script>
     <title>First Chapter VUE</title>
+    <style>
+        .box {
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
   </head>
   <body>
     <h1>Hello Vue</h1>
@@ -24,6 +34,12 @@
         <span v-if="isShow">Hide</span>
         <span v-else>Show</span>
       </button>
+      <br>
+
+      <div v-on:mouseover="handleEvent" class="box">mouseover event</div>
+      <div v-on:mouseleave="handleEvent" class="box">mouseleave event</div>
+      <div v-on:dblclick="handleEvent" class="box">double click event</div>
+      <div class="box"></div>
     </div>
     <script src="app.js"></script>
   </body>
