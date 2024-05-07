@@ -1,3 +1,15 @@
+<template>
+  <div class="flex flex-col md:flex-row justify-center items-center w-full h-screen">
+    <h1
+    class="text-red-500 border-b border-solid border-stone-300 p-2 text-3xl font-extrabold text-center"
+  >
+    {{ title }}
+  </h1>
+  <Modal :header='modalTitle' :text="modalContent" theme="sale"/>
+</div>
+</template>
+
+
 <script>
 import Modal from './components/Modal.vue'
 
@@ -6,6 +18,8 @@ export default {
   data() {
     return {
       title: 'Modal Project With Vue + Vite + Tailwind',
+      modalTitle: 'Sign up for the Giveaway!',
+      modalContent: 'Grab your favourite snack..!!'
     };
   },
   methods: {
@@ -19,16 +33,6 @@ export default {
 };
 </script>
 
-<template>
-  <h1
-    class="text-red-500 border-b border-solid border-stone-300 pb-2 mb-3 inline-block"
-  >
-    {{ title }}
-  </h1>
-
-  <Modal header='Sign up for the Giveaway!'/>
-  
-</template>
 
 <style scoped>
 .logo {
